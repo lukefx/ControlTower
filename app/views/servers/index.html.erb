@@ -1,0 +1,29 @@
+<h4>Listing servers</h4>
+
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Name</th>
+    <th>IP</th>
+    <th>Dns</th>
+    <th>Applications</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @servers.each do |server| %>
+    <tr>
+      <td><%= server.name %></td>
+      <td><%= server.ip %></td>
+      <td><%= server.dns %></td>
+      <td><%# server.applications.size %></td>
+      <td><%= link_to 'Show', server %></td>
+      <td><%= link_to 'Edit', edit_server_path(server) %></td>
+      <td><%= link_to 'Destroy', server, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br>
+
+<%= link_to 'New Server', new_server_path, class: 'btn btn-success' %>

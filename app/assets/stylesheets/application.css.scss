@@ -11,3 +11,9 @@
  *= require_self
  *= require_tree .
  */
+
+@import "bootstrap";
+
+.container {
+  margin-top: 30px;
+}
