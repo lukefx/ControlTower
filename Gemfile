@@ -33,6 +33,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'paperclip', git: "https://github.com/thoughtbot/paperclip.git"
+gem 'paper_trail', git: "https://github.com/airblade/paper_trail.git", branch: "rails4"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
