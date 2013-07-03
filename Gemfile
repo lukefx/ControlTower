@@ -36,6 +36,8 @@ end
 gem 'paperclip', git: "https://github.com/thoughtbot/paperclip.git"
 gem 'paper_trail', git: "https://github.com/airblade/paper_trail.git", branch: "rails4"
 
+gem "net-ping", :git => 'https://github.com/djberg96/net-ping.git'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

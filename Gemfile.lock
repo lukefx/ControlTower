@@ -8,6 +8,13 @@ GIT
       railties (~> 4.0)
 
 GIT
+  remote: https://github.com/djberg96/net-ping.git
+  revision: 4cc9eb4204f2d9cfda6f3f8330be700b5d20e54b
+  specs:
+    net-ping (1.6.0)
+      ffi (>= 1.0.0)
+
+GIT
   remote: https://github.com/jruby/activerecord-jdbc-adapter.git
   revision: 168c87954f88f4e08bbeb9cfda984478737f6352
   specs:
@@ -74,6 +81,7 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    ffi (1.9.0-java)
     hike (1.2.3)
     i18n (0.6.4)
     jbuilder (1.4.2)
@@ -154,6 +162,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
+  net-ping!
   paper_trail!
   paperclip!
   rails (= 4.0.0)
