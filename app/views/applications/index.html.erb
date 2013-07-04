@@ -1,29 +1,36 @@
-<h1>Listing applications</h1>
+<div class="row">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <div class="span12">
 
-  <tbody>
-    <% @applications.each do |application| %>
+    <h4>Applications list</h4>
+
+    <table class="table table-striped table-hover">
       <tr>
-        <td><%= application.name %></td>
-        <td><%= application.description %></td>
-        <td><%= link_to 'Show', application %></td>
-        <td><%= link_to 'Edit', edit_application_path(application) %></td>
-        <td><%= link_to 'Destroy', application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>ContextRoot</th>
+        <th>Deployed on</th>
+        <th>Status</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+      <% @applications.each do |app| %>
+        <tr>
+          <td><%= app.name %></td>
+          <td><%= app.context_root %></td>
+          <td><%= app.servers.map(&:name).join(", ") %></td>
+          <td>Status</td>
+          <td><%= link_to 'Show', app %></td>
+          <td><%= link_to 'Edit', edit_application_path(app) %></td>
+          <td><%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </table>
 
-<%= link_to 'New Application', new_application_path %>
+    <br>
+
+    <%= link_to 'New Application', new_application_path, class: 'btn btn-success' %>
+
+  </div>
+</div>

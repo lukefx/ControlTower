@@ -1,14 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="span3">
+    <h4><%= @application.name %></h4>
+    <small><%= @application.description %></small>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @application.name %>
-</p>
+  <div class="span3">
 
-<p>
-  <strong>Description:</strong>
-  <%= @application.description %>
-</p>
+  </div>
 
-<%= link_to 'Edit', edit_application_path(@application) %> |
-<%= link_to 'Back', applications_path %>
+</div>
+
+<hr />
+
+<div class="row">
+  <div class="span12">
+    <h4>Deployed on</h4>
+    <div class="row">
+      <% @application.servers.each do |server| %>
+        <div class="span3">
+          <i class="icon-linux"></i> <%= server.name %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

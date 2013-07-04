@@ -1,8 +1,8 @@
 <%= form_for(@application) do |f| %>
+
   <% if @application.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@application.errors.count, "error") %> prohibited this application from being saved:</h2>
-
       <ul>
       <% @application.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,15 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <fieldset>
+
+    <legend><%= title %></legend>
+
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => "input-xlarge" %>
+        <p class="help-block">The name of the application.</p>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :context_root, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :context_root, :class => "input-xlarge" %>
+        <p class="help-block">The deployment context root.</p>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :description, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :description, :class => "input-xlarge" %>
+        <p class="help-block">A description of the application.</p>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit :class => "btn btn-success" %>
+      <%= link_to "Cancel", applications_path, :class => "btn btn-danger" %>
+    </div>
+
+    </fieldset>
+
 <% end %>

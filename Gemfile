@@ -28,6 +28,10 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+group :development do
+  gem 'better_errors'
+end
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -37,6 +41,10 @@ gem 'paperclip', git: "https://github.com/thoughtbot/paperclip.git"
 gem 'paper_trail', git: "https://github.com/airblade/paper_trail.git", branch: "rails4"
 
 gem "net-ping", :git => 'https://github.com/djberg96/net-ping.git'
+gem 'net-scp', :require => 'net/scp'
+gem 'jruby-pageant'
+gem 'attr_encrypted'
+gem 'font-awesome-sass-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

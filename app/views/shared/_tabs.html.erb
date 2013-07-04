@@ -2,6 +2,6 @@
   <ul class="nav nav-tabs">
     <li class="<%= controller.controller_path == 'dashboard' ? 'active' : '' -%>"><%= link_to "Dashboard", root_path %></li>
     <li class="<%= controller.controller_path == 'servers' ? 'active' : '' -%>"><%= link_to "Servers", root_path %></li>
-    <li class="<%= controller.controller_path == 'applications' ? 'active' : '' -%>"><%= link_to "Applications", root_path %></li>
+    <li class="<%= controller.controller_path == 'applications' ? 'active' : '' -%>"><%= link_to "Applications", applications_path %></li>
   </ul>
 </div>

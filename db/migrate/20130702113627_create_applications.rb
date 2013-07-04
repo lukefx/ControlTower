@@ -3,7 +3,7 @@ class CreateApplications < ActiveRecord::Migration
     create_table :applications do |t|
       t.string :name
       t.text :description
-
+      t.string :context_root
       t.timestamps
     end
   end

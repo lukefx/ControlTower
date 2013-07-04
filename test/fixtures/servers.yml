@@ -1,8 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
-  ip: MyString
+  name: srv00034
+  ip: 10.120.0.133
+  description: Server di test
+  username:
+  password:
 
 two:
   name: MyString
