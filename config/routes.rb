@@ -1,7 +1,12 @@
 Controltower::Application.routes.draw do
-  resources :applications
 
+  get "revisions/index"
   resources :servers
+
+  resources :applications do
+    resources :revisions, shallow: true
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

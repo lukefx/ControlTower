@@ -3,6 +3,7 @@ class CreateDeployments < ActiveRecord::Migration
     create_table :deployments do |t|
       t.references :server
       t.references :application
+      t.string :number
       t.timestamps
     end
   end
