@@ -1,5 +1,10 @@
 <div class="row">
-  <div class="span3">
+  <div class="span3 pull-right">
+    <% if @application.revisions.any? %>
+      <%= link_to 'Deploy', '#', data: { toggle: 'modal', target: '#modal-window' }, class: "btn btn-success" -%>
+    <% end %>
+  </div>
+  <div class="span6">
     <h4><%= @application.name %></h4>
     <small><%= @application.description %></small>
   </div>
@@ -10,27 +15,34 @@
 <div class="row">
   <div class="span12">
     <h4>Revisions</h4>
-    <table class="table table-striped table-hover">
-      <tr>
-        <th>Name</th>
-        <th>Version</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
 
-      <% @application.revisions.each do |rev| %>
+    <% if @application.revisions.any? %>
+      <table class="table table-striped table-hover">
         <tr>
-          <td><%= link_to rev.name, rev %></td>
-          <td><%= rev.number %></td>
-          <td><%= link_to 'Deploy', '#', data: { rev: rev.id, toggle: 'modal', target: '#modal-window' } -%></td>
-          <td><%= link_to 'Show', rev %></td>
-          <td><%= link_to 'Edit', edit_revision_path(rev) %></td>
-          <td><%= link_to 'Destroy', rev, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <th>Name</th>
+          <th>Version</th>
+          <th></th>
+          <th></th>
+          <th></th>
         </tr>
-      <% end %>
-    </table>
+
+        <% @application.revisions.each do |rev| %>
+          <tr>
+            <td><%= link_to rev.name, rev %></td>
+            <td><%= rev.number %></td>
+            <td><%= link_to 'Show', rev %></td>
+            <td><%= link_to 'Edit', edit_revision_path(rev) %></td>
+            <td><%= link_to 'Destroy', rev, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </table>
+    <% else %>
+
+      <div class="alert">
+        <strong>Warning!</strong> Nothing to deploy here, create at least one version.
+      </div>
+
+    <% end %>
 
     <%= link_to "New version", new_application_revision_path(@application), class: "btn btn-success" %>
 

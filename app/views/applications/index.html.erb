@@ -17,7 +17,7 @@
 
       <% @applications.each do |app| %>
         <tr>
-          <td><%= app.name %></td>
+          <td><%= link_to app.name, app %></td>
           <td><%= app.context_root %></td>
           <td><%= app.servers.map(&:name).join(", ") %></td>
           <td>Status</td>
