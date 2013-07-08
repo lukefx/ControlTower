@@ -1,10 +1,14 @@
 class DeploymentsController < ApplicationController
 
   def create
-    @server = params[:server_id]
-    @application = params[:application_id]
-    @revision = params[:revision_id]
-    
+    @deployment = Deployment.where(deployment_params.except(:number)).first
+    Deployment.trigger_deploy(@deployment, deployment_params)
+  end
+
+  private
+
+  def deployment_params
+    params.require(:deployment).permit(:server_id, :application_id, :revision)
   end
 
 end

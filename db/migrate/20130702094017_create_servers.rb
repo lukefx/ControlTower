@@ -4,6 +4,7 @@ class CreateServers < ActiveRecord::Migration
       t.string :name
       t.string :dns
       t.string :ip
+      t.string :remote_path
       t.text   :description
       t.string :username
       t.string :password

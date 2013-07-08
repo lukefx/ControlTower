@@ -17,12 +17,14 @@
         <th></th>
         <th></th>
         <th></th>
+        <th></th>
       </tr>
 
       <% @application.revisions.each do |rev| %>
         <tr>
-          <td><%= rev.name %></td>
+          <td><%= link_to rev.name, rev %></td>
           <td><%= rev.number %></td>
+          <td><%= link_to 'Deploy', '#', data: { rev: rev.id, toggle: 'modal', target: '#modal-window' } -%></td>
           <td><%= link_to 'Show', rev %></td>
           <td><%= link_to 'Edit', edit_revision_path(rev) %></td>
           <td><%= link_to 'Destroy', rev, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -49,5 +51,27 @@
       <% end %>
     </div>
   </div>
+</div>
+
+<div class="modal hide fade" id="modal-window">
+
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>Deployments</h3>
+  </div>
+
+  <div class="modal-body">
+    <%= form_tag deployments_path, :remote => true, class: "form-inline" do %>
+      <%= select("deployment", "server_id", Server.all.collect { |s| [ s.name, s.id ] }, { include_blank: true }) %>
+      <%= select("deployment", "number", @application.revisions.all.collect { |r| [ r.number, r.id ] }, { include_blank: true }) %>
+      <%= hidden_field_tag('deployment[application_id]', @application.id) %>
+      <%= submit_tag "Deploy", :name => nil, :class => 'btn', data: { 'loading-text' => "Deploying..." } %>
+    <% end %>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Chiudi</button>
+  </div>
+
 </div>
 

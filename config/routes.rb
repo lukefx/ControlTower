@@ -1,8 +1,8 @@
 Controltower::Application.routes.draw do
 
-  get "revisions/index"
+  resources :deployments
   resources :servers
-
+  resources :revisions
   resources :applications do
     resources :revisions, shallow: true
   end

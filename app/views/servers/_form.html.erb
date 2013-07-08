@@ -11,22 +11,47 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
+  <fieldset>
 
-  <div class="field">
-    <%= f.label :ip %><br>
-    <%= f.text_field :ip %>
-  </div>
+    <legend><%= title %></legend>
 
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => "input-xlarge" %>
+        <p class="help-block">The name of the server.</p>
+      </div>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="control-group">
+      <%= f.label :ip, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :ip, :class => "input-xlarge" %>
+        <p class="help-block">The name of the server.</p>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :remote_path, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :remote_path, :class => "input-xlarge" %>
+        <p class="help-block">The remote path where file are uploaded.</p>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :description, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :description, :class => "input-xlarge" %>
+        <p class="help-block">The description of the server.</p>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit :class => "btn btn-success" %>
+      <%= link_to "Cancel", applications_path, :class => "btn btn-danger" %>
+    </div>
+
+  </fieldset>
+
 <% end %>

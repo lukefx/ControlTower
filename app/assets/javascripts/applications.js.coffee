@@ -6,7 +6,7 @@ $ ->
   $("#dropzone").filedrop ->
       url: $(this).data('url'),
       data: { _method:'PUT' },
-      paramname: 'application[deployable]',
+      paramname: 'revision[deployable]',
       maxfilesize: 50,
       docOver: -> $("#dropzone").children("span").text("Io accetto un file")
       docLeave: -> $("#dropzone").children("span").text("Drop files here")
