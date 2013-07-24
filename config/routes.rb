@@ -4,7 +4,7 @@ Controltower::Application.routes.draw do
   resources :servers
   resources :revisions
   resources :applications do
-    resources :revisions, shallow: true
+    resources :versions, shallow: true
   end
 
 

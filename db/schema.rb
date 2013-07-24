@@ -23,20 +23,8 @@ ActiveRecord::Schema.define(version: 20130704145202) do
 
   create_table "deployments", force: true do |t|
     t.integer  "server_id"
-    t.integer  "application_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "revisions", force: true do |t|
-    t.string   "name"
+    t.integer  "version_id"
     t.string   "number"
-    t.text     "changelog"
-    t.integer  "application_id"
-    t.string   "deployable_file_name"
-    t.string   "deployable_content_type"
-    t.integer  "deployable_file_size"
-    t.datetime "deployable_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -45,10 +33,24 @@ ActiveRecord::Schema.define(version: 20130704145202) do
     t.string   "name"
     t.string   "dns"
     t.string   "ip"
+    t.string   "remote_path"
     t.text     "description"
     t.string   "username"
     t.string   "password"
     t.text     "configuration"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "versions", force: true do |t|
+    t.string   "name"
+    t.string   "number"
+    t.text     "changelog"
+    t.integer  "application_id"
+    t.string   "deployable_file_name"
+    t.string   "deployable_content_type"
+    t.integer  "deployable_file_size"
+    t.datetime "deployable_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -8,7 +8,7 @@ class DeploymentsController < ApplicationController
   private
 
   def deployment_params
-    params.require(:deployment).permit(:server_id, :application_id, :revision)
+    params.require(:deployment).permit(:server_id, :version_id )
   end
 
 end
