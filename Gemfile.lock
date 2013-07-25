@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/airblade/paper_trail.git
-  revision: 1baead241804bbe476a8fa89b24ab4bdcb6d0c95
+  revision: c441a5de2d61042126bb042c3c18012fca3af32b
   branch: rails4
   specs:
     paper_trail (2.7.2)
@@ -9,27 +9,26 @@ GIT
 
 GIT
   remote: https://github.com/djberg96/net-ping.git
-  revision: 4cc9eb4204f2d9cfda6f3f8330be700b5d20e54b
+  revision: ff383cfcc724b9542d2893c6284b1131f434c44d
   specs:
-    net-ping (1.6.0)
+    net-ping (1.6.1)
       ffi (>= 1.0.0)
 
 GIT
   remote: https://github.com/jruby/activerecord-jdbc-adapter.git
-  revision: 168c87954f88f4e08bbeb9cfda984478737f6352
+  revision: 5588dc5f89b7a0654cc96524fd7c2b869e1633f6
   specs:
-    activerecord-jdbc-adapter (1.3.0.beta2)
-    activerecord-jdbcsqlite3-adapter (1.3.0.beta2)
-      activerecord-jdbc-adapter (~> 1.3.0.beta2)
+    activerecord-jdbc-adapter (1.3.0.rc1)
+    activerecord-jdbcsqlite3-adapter (1.3.0.rc1)
+      activerecord-jdbc-adapter (~> 1.3.0.rc1)
       jdbc-sqlite3 (~> 3.7.2)
 
 GIT
   remote: https://github.com/thoughtbot/paperclip.git
-  revision: f2b273a62b4ef4430de2ce420df54bd269609561
+  revision: 65cc5c7d4ffd4d015be202d807220d2acd5d1f93
   specs:
-    paperclip (3.4.2)
+    paperclip (3.5.0)
       activemodel (>= 3.0.0)
-      activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.0)
       mime-types
@@ -69,7 +68,7 @@ GEM
     better_errors (0.9.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
-    bootstrap-sass (2.3.2.0)
+    bootstrap-sass (2.3.2.1)
       sass (~> 3.2)
     builder (3.1.4)
     climate_control (0.0.3)
@@ -83,7 +82,7 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.6.2)
+    coffee-script-source (1.6.3)
     encryptor (1.1.3)
     erubis (2.7.0)
     execjs (1.4.0)
@@ -99,7 +98,7 @@ GEM
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
     jdbc-sqlite3 (3.7.2)
-    jquery-rails (3.0.1)
+    jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     jruby-pageant (1.1.1)
@@ -112,9 +111,9 @@ GEM
     mime-types (1.23)
     minitest (4.7.5)
     multi_json (1.7.7)
-    net-scp (1.1.1)
+    net-scp (1.1.2)
       net-ssh (>= 2.6.5)
-    net-ssh (2.6.7)
+    net-ssh (2.6.8)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -156,21 +155,24 @@ GEM
       therubyrhino_jar (>= 1.7.3)
     therubyrhino_jar (1.7.4)
     thor (0.18.1)
-    thread_safe (0.1.0)
+    thread_safe (0.1.2)
+      atomic
+    thread_safe (0.1.2-java)
       atomic
     tilt (1.4.1)
     treetop (1.4.14)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (1.2.0)
+    turbolinks (1.3.0)
       coffee-rails
     tzinfo (0.3.37)
-    uglifier (2.1.1)
+    uglifier (2.1.2)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
 
 PLATFORMS
   java
+  ruby
 
 DEPENDENCIES
   activerecord-jdbcsqlite3-adapter!

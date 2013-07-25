@@ -17,19 +17,18 @@
         <th>Name</th>
         <th>ContextRoot</th>
         <th>Status</th>
-        <th></th>
-        <th></th>
-        <th></th>
       </tr>
 
-      <% @server.applications.each do |app| %>
+      <% @server.versions.each do |version| %>
         <tr>
-          <td><%= app.name %></td>
-          <td><%= app.context_root %></td>
+          <td><%= version.application.name %></td>
+          <td><%= version.application.context_root %></td>
           <td>Status</td>
-          <td><%= link_to 'Show', app %></td>
+          <!--
+		  <td><%= link_to 'Show', app %></td>
           <td><%= link_to 'Edit', edit_application_path(app) %></td>
           <td><%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			-->
         </tr>
       <% end %>
     </table>

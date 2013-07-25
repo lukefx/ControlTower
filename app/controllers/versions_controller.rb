@@ -10,7 +10,7 @@ class VersionsController < ApplicationController
   end
 
   def new
-    @versions = Version.new(application: @application)
+    @version = Version.new(application: @application)
   end
 
   def edit

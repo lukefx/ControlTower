@@ -2,7 +2,7 @@ Controltower::Application.routes.draw do
 
   resources :deployments
   resources :servers
-  resources :revisions
+  resources :versions
   resources :applications do
     resources :versions, shallow: true
   end

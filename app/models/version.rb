@@ -1,7 +1,6 @@
-class Revision < ActiveRecord::Base
+class Version < ActiveRecord::Base
+  belongs_to :application
   has_many :deployments
   has_many :servers, through: :deployments
-  belongs_to :application
   has_attached_file :deployable
-
 end

@@ -56,11 +56,13 @@
   <div class="span12">
     <h4>Deployed on</h4>
     <div class="row">
-      <% @application.servers.each do |server| %>
+<% if false %>   
+   <% @application.servers.each do |server| %>
         <div class="span3 well">
           <i class="icon-linux"></i> <%= server.name %>
         </div>
       <% end %>
+<% end %>
     </div>
   </div>
 </div>
