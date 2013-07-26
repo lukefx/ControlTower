@@ -19,10 +19,10 @@
         <th>Status</th>
       </tr>
 
-      <% @server.versions.each do |version| %>
+      <% @server.releases.each do |release| %>
         <tr>
-          <td><%= version.application.name %></td>
-          <td><%= version.application.context_root %></td>
+          <td><%= release.application.name %></td>
+          <td><%= release.application.context_root %></td>
           <td>Status</td>
           <!--
 		  <td><%= link_to 'Show', app %></td>

@@ -1,3 +1,3 @@
 class Application < ActiveRecord::Base
-  has_many :versions
+  has_many :releases
 end
