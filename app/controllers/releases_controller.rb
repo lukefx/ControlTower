@@ -1,6 +1,7 @@
 class ReleasesController < ApplicationController
 
   before_action :set_application
+  before_action :set_release, only: [:show, :edit, :update, :destroy]
 
   def index
     @releases = @application.releases
@@ -32,7 +33,7 @@ class ReleasesController < ApplicationController
 
   def update
     respond_to do |format|
-      if @release.update(application_params)
+      if @release.update(release_params)
         format.html { redirect_to @release, notice: 'Version was successfully updated.' }
         format.json { head :no_content }
       else

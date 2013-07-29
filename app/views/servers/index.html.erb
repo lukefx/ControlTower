@@ -5,7 +5,7 @@
     <th>Status</th>
     <th>Name</th>
     <th>IP</th>
-    <th>Applications</th>
+    <th>Deployments</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,7 +16,7 @@
       <td><%= up?(server) %></td>
       <td><%= server.name %></td>
       <td><%= server.ip %></td>
-      <td><%= server.applications.size %></td>
+      <td><%= server.deployments.size %></td>
       <td><%= link_to 'Show', server %></td>
       <td><%= link_to 'Edit', edit_server_path(server) %></td>
       <td><%= link_to 'Destroy', server, method: :delete, data: { confirm: 'Are you sure?' } %></td>
