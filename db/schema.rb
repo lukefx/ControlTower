@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20130704145202) do
   create_table "deployments", force: true do |t|
     t.integer  "server_id"
     t.integer  "application_id"
+    t.string   "number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(version: 20130704145202) do
     t.string   "name"
     t.string   "dns"
     t.string   "ip"
+    t.string   "remote_path"
     t.text     "description"
     t.string   "username"
     t.string   "password"

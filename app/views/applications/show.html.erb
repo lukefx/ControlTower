@@ -59,6 +59,7 @@
       <% @application.servers.each do |server| %>
         <div class="span3 well">
           <i class="icon-linux"></i> <%= server.name %>
+          <%= link_to 'Undeploy', app, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
       <% end %>
     </div>

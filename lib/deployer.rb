@@ -11,6 +11,12 @@ module Deployer
       end
     end
 
+    def self.undeploy(server, application)
+      Net::SSH.start(server.ip, server.username, password: server.password) do |ssh|
+        ssh.exec!("sudo rm #{server.remote_path}/#{@revision.deployable_file_name}")
+      end
+    end
+
     def self.list_deployments(server)
       Net::SSH.start(server.ip, server.username, password: server.password) do |ssh|
         ssh.exec!("find '#{server.remote_path}' -iregex '.*\\(war\\|ear\\)' -printf '%f,'").split(',')
